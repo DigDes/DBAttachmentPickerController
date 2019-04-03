@@ -223,6 +223,7 @@ const DBAttachmentMediaType DBAttachmentMediaTypeMaskAll = DBAttachmentMediaType
     DBAssetPickerController *viewController =[[DBAssetPickerController alloc] init];
     viewController.assetMediaType = [self assetMediaType];
     viewController.assetPickerDelegate = self;
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
     [self.initialViewController presentViewController:viewController animated:YES completion:nil];
 }
 
@@ -242,7 +243,7 @@ const DBAttachmentMediaType DBAttachmentMediaTypeMaskAll = DBAttachmentMediaType
     @try {
         UIDocumentMenuViewController *viewController = [[UIDocumentMenuViewController alloc] initWithDocumentTypes:documentMediaTypes inMode:UIDocumentPickerModeImport];
         viewController.delegate = self;
-        viewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        viewController.modalPresentationStyle = UIModalPresentationCustom;
         
         viewController.popoverPresentationController.sourceView = [self popoverPresentationView];
         viewController.popoverPresentationController.sourceRect = [self popoverPresentationRect];
